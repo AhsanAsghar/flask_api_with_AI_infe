@@ -10,9 +10,9 @@ def load_image(image_url):
     return image
 
 def get_prosthesis_predictions(image, teeth_predictions):
-    rf = Roboflow(api_key="1XjdbDPyGKPxbLAQZwXP")
-    project = rf.workspace().project("prosthesis-dentalcaries")
-    model = project.version("2").model
+    rf = Roboflow(api_key="Your_api_key")
+    project = rf.workspace().project("your Project Name")
+    model = project.version("Project Version").model
     response = model.predict(image, confidence=18, overlap=50)
     prosthesis_predictions = response.json()['predictions']
     
